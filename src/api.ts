@@ -1,7 +1,7 @@
 import type { Transaction } from './context/TransactionsContext';
 import { transactions } from './data';
 import {
-  getLocalStorageArray,
+  getTransactionsArray,
   saveOneTransactionToLocalStorage,
 } from './utils/localStorageMethods';
 
@@ -13,7 +13,7 @@ export function mockFetchTransactions() {
 
 export function localHostFetchTransactions() {
   return new Promise<Transaction[]>((resolve) => {
-    setTimeout(() => resolve(getLocalStorageArray()), 2000);
+    setTimeout(() => resolve(getTransactionsArray()), 2000);
   });
 }
 

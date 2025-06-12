@@ -41,7 +41,7 @@ export default function TransactionForm({ toggleModal }: TransactionFormProps) {
     const newTransaction: Transaction = {
       ...values,
       date: new Date(values.date ? new Date() : values.date).toISOString(),
-      key: generateUniqueKey(),
+      key: 'trz' + generateUniqueKey(),
     };
     async function preload() {
       const response: boolean = await localHostPostTransaction(newTransaction);

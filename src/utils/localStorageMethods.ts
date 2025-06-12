@@ -8,10 +8,8 @@ export function getAllLocalStorageItems(): Record<string, Transaction> {
       const value = localStorage.getItem(key);
       if (value) {
         try {
-          // Пытаемся распарсить значение как JSON
           storageData[key] = JSON.parse(value);
         } catch (error) {
-          // Если парсинг не удался, сохраняем как строку
           console.error(
             `Ошибка при парсинге значения для ключа ${key}:`,
             error
@@ -29,6 +27,12 @@ function getValuesFromObject(obj: Record<string, Transaction>): Transaction[] {
 
 export function getLocalStorageArray() {
   return getValuesFromObject(getAllLocalStorageItems());
+}
+
+export function getTransactionsArray() {
+  return getLocalStorageArray()
+    .filter((transaction) => transaction.key.includes('trz'))
+    .map((transaction) => transaction);
 }
 
 export function saveTransactionsToLocalStorage(
