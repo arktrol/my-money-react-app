@@ -8,7 +8,6 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -35,5 +34,5 @@
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"
   },
-  "homepage": "https://arktrol.github.io"
+  "homepage": "https://arktrol.github.io/my-money-react-app"
 }
